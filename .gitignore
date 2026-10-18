@@ -1,0 +1,22 @@
+# Gradle
+.gradle/
+build/
+!gradle/wrapper/gradle-wrapper.jar
+
+# Android
+app/build/
+local.properties
+*.apk
+*.aab
+
+# JDK 自动下载缓存
+.tools/
+
+# IDE
+.idea/
+*.iml
+.DS_Store
+.vscode/
+
+# Logs
+*.log

@@ -25,15 +25,9 @@ jobs:
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
 
-    - name: Gradle Android
-      # You may pin to the exact commit or the version.
-      # uses: Raul6469/android-gradle-action@b8fc7c7bde2562a4578b7e1bd996cc78d841638e
-      uses: Raul6469/android-gradle-action@2.0.0
-      with:
-        # The ./gradlew command arguments (这里必须填值，我帮你填了 assembleDebug)
-        script: assembleDebug
-        # Your Android license agreement id (这里如果不是必填，我帮你注释掉，免得空值报错)
-        # android-licence: 
+    # 踹掉第三方插件，直接用纯原生命令跑
+    - name: Build with Gradle
+      run: ./gradlew assembleDebug --stacktrace
 
     - name: Upload APK Artifact
       uses: actions/upload-artifact@v4
